@@ -33,7 +33,7 @@
                     value="{{ langs.0 }}"
                     class="ui primary button compact"
                     onclick="changeLanguage('{{ langs.0 }}');">
-                    {{ langs.0|upper }}
+                    {{ langToReadable(langs.0) }}
                     </button>
                 {% endif %}  
             {% endfor %}
@@ -49,7 +49,7 @@
                     value="{{ langs.0 }}"
                     class="item"
                     onclick="changeLanguage('{{ langs.0 }}');">
-                    {{ langs.0|upper }}
+                    {{ langToReadable(langs.0) }}
                     </button>
                 {% endfor %}
             </div>
@@ -59,7 +59,15 @@
 </form>
 
 <script>
-
+function langToReadable(lang) {
+    if (lang === 'fr') {
+        return "Francais";
+    }
+    else if (lang === 'en') {
+        return "English";
+    }
+    return lang.toUpperCase();
+}
 function changeLanguage(lang) {
     console.log('my lang'+lang);
     $.ajax({
