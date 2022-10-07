@@ -50,6 +50,18 @@ msgstr "Jeton"
 msgid "The password is invalid."
 msgstr "Le mot de passe est invalide"
 
+#: core/forms.py:331
+msgid "Enter current password"
+msgstr "Entrer le mot de passe actuel"
+
+#: core/forms.py:338
+msgid "Enter new password"
+msgstr "Entrez un nouveau mot de passe"
+
+#: core/forms.py:345
+msgid "Enter new password to confirm"
+msgstr "Entrez le nouveau mot de passe pour confirmer"
+
 #: core/forms.py:368 core/forms.py:375 core/forms.py:382
 #: core/templatetags/Pleio_templatetags.py:16
 msgid "Please select one of the questions"
@@ -813,9 +825,16 @@ msgstr ""
 "majuscule, une lettre minuscule et un caractère spécial"
 
 #: core/templates/registration/password_reset_confirm.html:52
-#: core/templates/security_pages/change_password.html:55
 msgid "Confirm"
 msgstr "Confirmer"
+
+#: core/templates/security_pages/change_password.html:55
+msgid "Submit new password"
+msgstr "Soumettre un nouveau mot de passe"
+
+#: core/templates/security_pages/change_password.html:55
+msgid "Submit new password button"
+msgstr "Bouton Soumettre un nouveau mot de passe"
 
 #: core/templates/registration/password_reset_confirm.html:59
 msgid ""
@@ -932,6 +951,10 @@ msgstr "Les paramètres de sécurité"
 msgid "These are the applications connected to you GCaccount."
 msgstr "Voici les applications qui sont liées à votre GCcompte"
 
+#: core/templates/security_pages/authorized_apps.html:16
+msgid "Expand box"
+msgstr "Développer la zone"
+
 #: core/templates/security_pages/authorized_apps.html:33
 msgid "Has access to:"
 msgstr "Voici ce à quoi votre compte a accès :"
@@ -968,8 +991,8 @@ msgstr ""
 
 #: core/templates/security_pages/security_questions.html:13
 #: core/templates/security_pages_questions.html:14
-msgid "Set questions"
-msgstr "Définir les questions"
+msgid "Set security questions"
+msgstr "Définir des questions de sécurité"
 
 #: core/templates/security_pages/two_factor_authorization.html:13
 #: core/templates/tf_profile.html:12
@@ -1095,6 +1118,10 @@ msgid ""
 "enhanced account\n"
 "                        security."
 msgstr "L'authentification à deux facteurs n'est pas activée pour votre compte. Activez l'authentification à deux facteurs pour augmenter la sécurité de votre compte."
+
+#: core/templates/security_pages/two_factor_authorization.html:158
+msgid "Enable two-factor authentication button"
+msgstr "Activer le bouton d'authentification à deux facteurs"
 
 #: core/templates/security_pages/two_factor_authorization.html:160
 #: core/templates/tf_profile.html:50

@@ -155,7 +155,7 @@
                 <form method="post" action="/securitypages-pagessurlasecurite/2fa_setup-a2f_configuration/">
                     <div class="card__action ___addpadding-side">
                         {% csrf_token %}
-                        <button name="2fa-setup" type="submit" class="ui button right floated primary">{% trans "Enable" %}</button>
+                        <button name="2fa-setup" type="submit" class="ui button right floated primary" aria-label='{% trans "Enable two-factor authentication button" %}'>{% trans "Enable" %}</button>
                     </div>
                 </form>
             </div>
