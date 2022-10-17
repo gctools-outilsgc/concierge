@@ -21,8 +21,8 @@ WORKDIR /app
 RUN npm install -g npm
 
 ## Install and update NPM packages
-RUN npm install && \
-    npm update && \
+RUN npm install --legacy-peer-deps && \
+    npm update --legacy-peer-deps && \
     npm run build
 
 RUN mv /app/docker/start.sh /start.sh
