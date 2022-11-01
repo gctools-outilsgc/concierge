@@ -64,15 +64,6 @@
 </form>
 
 <script>
-function langToReadable(lang) {
-    if (lang === 'fr') {
-        return "Francais";
-    }
-    else if (lang === 'en') {
-        return "English";
-    }
-    return lang.toUpperCase();
-}
 function changeLanguage(lang) {
     console.log('my lang'+lang);
     $.ajax({
