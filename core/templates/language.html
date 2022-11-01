@@ -33,7 +33,12 @@
                     value="{{ langs.0 }}"
                     class="ui primary button compact"
                     onclick="changeLanguage('{{ langs.0 }}');">
-                    {{ langToReadable(langs.0) }}
+                        {% if langs.0 == 'fr' %}
+                          <span>Français</span>
+                        {% endif %}
+                        {% if langs.0 == 'en' %}
+                          <span>English</span>
+                        {% endif %}
                     </button>
                 {% endif %}  
             {% endfor %}
@@ -49,7 +54,7 @@
                     value="{{ langs.0 }}"
                     class="item"
                     onclick="changeLanguage('{{ langs.0 }}');">
-                    {{ langToReadable(langs.0) }}
+                    {{ langs.0|upper }}
                     </button>
                 {% endfor %}
             </div>
