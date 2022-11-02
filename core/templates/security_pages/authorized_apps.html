@@ -13,7 +13,7 @@
                     <div class="auth_app-container">
                         <div class="auth_app-header">
                             <h4>
-                                <button aria-expanded="false" aria-controls="app_info_{{ object.id }}" class="d-flex app-collapse">
+                                <button aria-expanded="false" aria-controls="app_info_{{ object.id }}" aria-label='{% trans "Expand box" %}' class="d-flex app-collapse">
                                     <div class="align-self-center">
                                         {% get_client_logo object.client as client_obj %}
                                         {% if client_obj.logo %}
