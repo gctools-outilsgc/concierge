@@ -3,10 +3,11 @@ version: '2'
 services:
   db:
     image: postgres
+    restart: always
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
   web:
     build: .
     environment:

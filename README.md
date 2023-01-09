@@ -3,6 +3,8 @@
 This is the Pleio microservice used for handling user registration, login and SAML2 SSO. It is based on [Django project](https://www.djangoproject.com/) and handles login througout the Pleio ecosystem using OAuth2.
 
 ## Setup development (through Docker)
+For windows: make sure you configure git to not do CRLF before you pull (git config --global core.autocrlf false)
+
 Make sure [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/) is installed. Then run the following commands within the repository:
 
     docker-compose -f docker-compose.dev.yml up
