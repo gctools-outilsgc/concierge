@@ -2,7 +2,7 @@ FROM python:3.6-alpine
 
 RUN apk --no-cache add \
     nodejs \
-    nodejs-npm \
+    npm \
     gcc \
     jpeg-dev \
     musl-dev \
