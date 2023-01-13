@@ -12,15 +12,15 @@
 <style>
 
 .valid {
-  color: green;
+  color: #2E7614;
 }
 
 .reqslist li {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
 
 .invalid {
-  color: red;
+  color: #BF2B2B;
 }
 
 
@@ -70,6 +70,15 @@
         </div>
         <div class="field">
             <label for="id_password1">{% trans "Password" %} </label>
+            <div class="ui message" id="pwd-reqs">
+                <span id="pwd-len">{% trans "Password must be 8 characters and include:" %} </span>
+                <ul class="ui list reqslist">
+                    <li id="pwd-case" class="">{% trans "at least 1 lowercase and 1 uppercase letter" %}</li>
+                    <li id="pwd-char" class="">{% trans "at least 1 special character (!@#$^&*)" %}</li>
+                    <li id="pwd-num" class="">{% trans "at least 1 number (0-9)" %}</li>
+                </ul>
+    
+            </div>
             <span id="error_password1">{{ form.errors.password1 }}</span>
 	    <div class="password_field">
             {{ form.password1 }}
@@ -85,16 +94,7 @@
             <span class="password__toggle" title="{% trans "Show password" %}">{% include_asset "icons/eye.svg" %}</span>
             <span class="capslock" aria-live="assertive"></span>
 	    </div>
-        <div class="ui message" id="pwd-reqs">
-            {% trans "Your password must:" %} 
-            <ul class="ui list reqslist">
-                <li id="pwd-len" class="invalid">{% trans "Be at least 8 characters in length" %}</li>
-                <li id="pwd-case" class="invalid">{% trans "Contain at least 1 lowercase and 1 uppercase letter" %}</li>
-                <li id="pwd-char" class="invalid">{% trans "Contain at least 1 special character (!@#$^&*)" %}</li>
-                <li id="pwd-num" class="invalid">{% trans "Contain at least 1 number (0-9)" %}</li>
-            </ul>
-
-        </div>
+        
         </div>
 
         <div class="register__checks field">
