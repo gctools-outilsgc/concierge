@@ -328,19 +328,22 @@ class ChangePasswordForm(forms.Form):
     old_password = forms.CharField(
         strip=False,
         widget=forms.PasswordInput(attrs={
-            'aria-labelledby': 'error_id_old_password'
+            'aria-labelledby': 'error_id_old_password',
+            'aria-label': _('Enter current password')
         })
     )
     new_password1 = forms.CharField(
         strip=False,
         widget=forms.PasswordInput(attrs={
-            'aria-labelledby': 'error_id_new_password1'
+            'aria-labelledby': 'error_id_new_password1',
+            'aria-label': _('Enter new password')
         })
     )
     new_password2 = forms.CharField(
         strip=False,
         widget=forms.PasswordInput(attrs={
-            'aria-labelledby': 'error_id_new_password2'
+            'aria-labelledby': 'error_id_new_password2',
+            'aria-label': _('Enter new password to confirm')
         })
     )
 

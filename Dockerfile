@@ -22,7 +22,6 @@ RUN npm install -g npm
 
 ## Install and update NPM packages
 RUN npm install --legacy-peer-deps && \
-   
     npm run build
 
 RUN mv /app/docker/start.sh /start.sh

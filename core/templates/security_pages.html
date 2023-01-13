@@ -8,17 +8,7 @@
 {% block page_header %}{% trans "Security" %}{% endblock %}
 
 {% block content %}
-<script type="text/javascript">
-    window.onload = function() {
-       {
-        document.getElementById("id_old_password").focus();
-        var state = "{{2FA.state}}";
-        if ( state == "setup"  ) {
-            document.getElementById("id_token").focus();
-            }
-      }
-    };
-  </script>
+
 <h2 class="ui header">{% trans "Security" %}</h2>
 
 {% if messages %}
