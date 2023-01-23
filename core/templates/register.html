@@ -9,7 +9,22 @@
 {% endblock %}
 
 {% block content %}
+<style>
 
+.valid {
+  color: #2E7614;
+}
+
+.reqslist li {
+    font-size: 0.9rem;
+}
+
+.invalid {
+  color: #BF2B2B;
+}
+
+
+</style>
 <form method="post" action="." class="ui form">
     {% csrf_token %}
     <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
@@ -54,7 +69,16 @@
             {{ form.email }}
         </div>
         <div class="field">
-            <label for="id_password1">{% trans "Password" %} <div class="mini circular ui icon button popup-html" data-position="right center" data-html="{% trans "Your password must:" %}<ul><li>{% trans "Be at least 8 characters in length" %}</li><li>{% trans "Contain at least 1 lowercase and 1 uppercase letter" %}</li><li>{% trans "Contain at least 1 special character (!@#$^&*)" %}</li><li>{% trans "Contain at least 1 number (0-9)" %}</li></ul>{% trans "Your password should:" %}<ul><li>{% trans "Be adequately complex and not contain simple patterns like <strong>abc123</strong>" %}</li><li>{% trans "Not contain words from the dictionary" %}</li><li>{% trans "Not contain personal data (like your Social Security number or address)" %}</li></ul>" style="padding: 3px;"><i class="question icon"></i></div></label>
+            <label for="id_password1">{% trans "Password" %} </label>
+            <div class="ui message" id="pwd-reqs">
+                <span id="pwd-len">{% trans "Password must be 8 characters and include:" %} </span>
+                <ul class="ui list reqslist">
+                    <li id="pwd-case" class="">{% trans "at least 1 lowercase and 1 uppercase letter" %}</li>
+                    <li id="pwd-char" class="">{% trans "at least 1 special character (!@#$^&*)" %}</li>
+                    <li id="pwd-num" class="">{% trans "at least 1 number (0-9)" %}</li>
+                </ul>
+    
+            </div>
             <span id="error_password1">{{ form.errors.password1 }}</span>
 	    <div class="password_field">
             {{ form.password1 }}
@@ -70,6 +94,7 @@
             <span class="password__toggle" title="{% trans "Show password" %}">{% include_asset "icons/eye.svg" %}</span>
             <span class="capslock" aria-live="assertive"></span>
 	    </div>
+        
         </div>
 
         <div class="register__checks field">
@@ -104,5 +129,55 @@
 
     </fieldset>
 </form>
+<script>
 
+    let pwdInput= document.getElementById("id_password1");
+    let pwdCase = document.getElementById("pwd-case");
+    let pwdLen = document.getElementById("pwd-len");
+    let pwdNum = document.getElementById("pwd-num");
+    let pwdSp = document.getElementById("pwd-char");
+
+    pwdInput.onkeyup = () =>{
+        //Check for lowercase letters
+        let lowerCase = /[a-z]/g;
+        let upperCase = /[A-Z]/g;
+        if(pwdInput.value.match(lowerCase) && pwdInput.value.match(upperCase)){
+            pwdCase.classList.remove("invalid")
+            pwdCase.classList.add("valid")
+        }else{
+            pwdCase.classList.remove("valid")
+            pwdCase.classList.add("invalid")
+        }
+        //Check that password is 8 cahracters or more
+        if(pwdInput.value.length >= 8){
+            
+            pwdLen.classList.remove("invalid")
+            pwdLen.classList.add("valid")
+        }else{
+            pwdLen.classList.remove("valid")
+            pwdLen.classList.add("invalid")
+        }
+        
+        //Check for numbers
+        let numbers = /[0-9]/g
+        if(pwdInput.value.match(numbers)){
+            pwdNum.classList.remove("invalid")
+            pwdNum.classList.add("valid")
+        }else{
+            pwdNum.classList.remove("valid")
+            pwdNum.classList.add("invalid")
+        }
+        // Check for the most common special characters
+        let specialChar = /[`!@#$%^&*()_+?~-]/g
+        if(pwdInput.value.match(specialChar)){
+            pwdSp.classList.remove("invalid")
+            pwdSp.classList.add("valid")
+        }else{
+            pwdSp.classList.remove("valid")
+            pwdSp.classList.add("invalid")
+        }
+        
+    }
+   
+</script>
 {% endblock %}

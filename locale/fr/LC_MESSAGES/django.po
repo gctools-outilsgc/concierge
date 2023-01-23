@@ -696,21 +696,24 @@ msgstr "Prénom et nom"
 msgid "Your password must:"
 msgstr "Exigences de mot de passe :"
 
+msgid "Password must be 8 characters and include:"
+msgstr "Le mot de passe doit compter 8 caractères et comprendre :"
+
 #: core/templates/register.html:57
 msgid "Be at least 8 characters in length"
 msgstr "Avoir au moins 8 caractères"
 
 #: core/templates/register.html:57
-msgid "Contain at least 1 lowercase and 1 uppercase letter"
-msgstr "Contenir au moins 1 lettre minuscule et 1 majuscule"
+msgid "at least 1 lowercase and 1 uppercase letter"
+msgstr "au moins 1 lettre minuscule et 1 majuscule"
 
 #: core/templates/register.html:57
-msgid "Contain at least 1 special character (!@#$^&*)"
-msgstr "Contenir au moins 1 caractère spécial (! @ # $ ^ & *)"
+msgid "at least 1 special character (!@#$^&*)"
+msgstr "au moins 1 caractère spécial (! @ # $ ^ & *)"
 
 #: core/templates/register.html:57
-msgid "Contain at least 1 number (0-9)"
-msgstr "Contenir au moins 1 nombre (0-9)"
+msgid "at least 1 number (0-9)"
+msgstr "au moins 1 nombre (0-9)"
 
 #: core/templates/register.html:57
 msgid "Your password should:"

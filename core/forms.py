@@ -201,7 +201,8 @@ class RegisterForm(forms.Form):
     password1 = forms.CharField(
         strip=False,
         widget=forms.PasswordInput(attrs={
-            'aria-labelledby': 'error_password1'
+            'aria-labelledby': 'error_password1',
+            'aria-describedby': 'pwd-reqs'
         })
     )
     password2 = forms.CharField(
