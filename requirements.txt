@@ -13,7 +13,7 @@ django-user-sessions==1.7.1
 django-two-factor-auth==1.12
 django-webpack-loader==0.6.0
 djangorestframework==3.9.1
-django-debug-toolbar==1.11
+django-debug-toolbar==1.11.1
 django-axes==4.5.4
 dj_database_url==0.5.0
 geoip2==2.5.0
