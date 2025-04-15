@@ -21,5 +21,5 @@ services:
     volumes:
       - ./media:/app/media
   redis:
-    image: redis
+    image: redis:7.2
     restart: always
