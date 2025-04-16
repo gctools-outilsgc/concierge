@@ -20,7 +20,7 @@ geoip2==2.5.0
 gunicorn==19.9.0
 Pillow==7.1.0
 psycopg2==2.7
-uWSGI==2.0.15
+uWSGI==2.0.22
 pika==0.12.0
 django-redis==4.10.0
 django-ipware==2.1.0
