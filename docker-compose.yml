@@ -4,6 +4,8 @@ services:
   db:
     image: postgres
     restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
   web:
@@ -21,5 +23,5 @@ services:
     volumes:
       - ./media:/app/media
   redis:
-    image: redis
+    image: redis:7.2
     restart: always
