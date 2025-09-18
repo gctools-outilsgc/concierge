@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.contrib import auth
 from django.core import signing
 from django.test.client import RequestFactory
+from django.http import HttpRequest
 from unittest import mock
 
 from core.models import User
@@ -40,10 +41,12 @@ class UserTestCase(TestCase):
     def test_login_with_email(self):
         """ Make sure a user can login with email and password """
         invalid_login = auth.authenticate(
+            request=HttpRequest(),
             username="john@superuser.com",
             password="asdf"
         )
         valid_login = auth.authenticate(
+            request=HttpRequest(),
             username="john@superuser.com",
             password="LZwHZucJj9JD"
         )
