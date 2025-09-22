@@ -26,7 +26,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.cache import never_cache
 from django.core.exceptions import ValidationError
-from django.utils.http import is_safe_url, urlsafe_base64_decode
+from django.utils.http import urlsafe_base64_decode
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
 
@@ -235,7 +235,7 @@ class i18nPasswordResetConfirmView(PasswordContextMixin, FormView):
                     return HttpResponseRedirect(redirect_url)
 
         # Display the "Password reset unsuccessful" page.
-        return self.render_to_response(self.get_context_data())
+        return self.render(context=self.get_context_data())
 
     def get_user(self, uidb64):
         try:

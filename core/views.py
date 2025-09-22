@@ -40,7 +40,6 @@ from two_factor.views.profile import DisableView
 
 from django.http import Http404, HttpResponseRedirect
 from django.views.decorators.cache import never_cache
-from django.utils.http import urlquote
 import time
 from datetime import datetime
 from oidc_provider.models import UserConsent
