@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.13-alpine
 
 RUN apk --no-cache add \
     nodejs \
@@ -18,7 +18,7 @@ COPY . /app
 WORKDIR /app
 
 ## Update NPM
-RUN npm install -g npm
+#RUN npm install -g npm
 
 ## Install and update NPM packages
 RUN npm install --legacy-peer-deps && \
