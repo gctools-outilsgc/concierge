@@ -16,7 +16,7 @@ from django_otp.plugins.otp_static.models import StaticToken
 
 from .models import PleioPartnerSite, User
 from .forms import PleioAuthenticationTokenForm, LabelledLoginForm
-from axes.attempts import get_cache_key, get_axes_cache
+from axes.helpers import get_client_cache_keys, get_cache
 from pleio_account import settings
 
 from django.contrib.auth import get_user_model
@@ -43,8 +43,8 @@ class PleioLoginView(LoginView):
     )
 
     def get_context_data(self, **kwargs):
-        cache_hash_key = get_cache_key(self.request)
-        attempt = get_axes_cache().get(cache_hash_key)
+        cache_hash_key = get_client_cache_keys(self.request)[1]
+        attempt = get_cache().get(cache_hash_key)
         if not attempt:
             attempt = 0
         username = self.request.POST.get('auth-username', None)
