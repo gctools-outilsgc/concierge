@@ -5,19 +5,22 @@ from django.core.mail.backends.smtp import EmailBackend
 from constance import config
 
 from django.core.exceptions import PermissionDenied
-from axes.attempts import is_already_locked
-from axes.utils import get_credentials, get_lockout_message
-from axes.backends import AxesModelBackend
+from axes.handlers.proxy import AxesProxyHandler
+from axes.helpers import get_credentials, get_lockout_message
+from axes.backends import AxesStandaloneBackend
+from axes.exceptions import AxesBackendPermissionDenied, AxesBackendRequestParameterRequired
 
 from .service_mesh import service_mesh_message
 
 # Combine AxesModelBackend and ElggBackend into one backend
-class ElggLockout(AxesModelBackend):
+class ElggLockout(AxesStandaloneBackend):
 
     def authenticate(self, request, username=None, password=None, **kwargs):
 
         if request is None:
-            raise AxesModelBackend.RequestParameterRequired()
+            raise AxesBackendRequestParameterRequired(
+                "AxesBackend requires a request as an argument to authenticate"
+            )
 
         try:
             user = User.objects.get(email__iexact=username)
@@ -65,13 +68,19 @@ class ElggLockout(AxesModelBackend):
 
         credentials = get_credentials(username=username, password=password, **kwargs)
 
-        if is_already_locked(request, credentials):
-            error_msg = get_lockout_message()
-            response_context = kwargs.get('response_context', {})
-            response_context['error'] = error_msg
-            raise PermissionDenied(error_msg)
+        if AxesProxyHandler.is_allowed(request, credentials):
+            return
 
-        return
+        error_msg = get_lockout_message()
+        response_context = kwargs.get("response_context", {})
+        response_context["error"] = error_msg
+
+        if not settings.AXES_RESET_COOL_OFF_ON_FAILURE_DURING_LOCKOUT:
+            request.axes_locked_out = True
+
+        raise AxesBackendPermissionDenied(
+            "AxesBackend detected that the given user is locked out"
+        )
 
     def get_user(self, user_id):
         try:
