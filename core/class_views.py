@@ -43,7 +43,7 @@ class PleioLoginView(LoginView):
     )
 
     def get_context_data(self, **kwargs):
-        cache_hash_key = get_client_cache_keys(self.request)[1]
+        cache_hash_key = get_client_cache_keys(self.request)[0]
         attempt = get_cache().get(cache_hash_key)
         if not attempt:
             attempt = 0
