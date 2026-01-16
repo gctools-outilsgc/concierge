@@ -432,6 +432,8 @@ DATABASES = {
     )
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 try:
     allowed_hosts = os.environ['CONCIERGE_ALLOWED_HOSTS']
 except KeyError:
