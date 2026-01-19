@@ -1,0 +1,8 @@
+services:
+  test:
+    build: .
+    command: python manage.py test
+    environment:
+      - CONCIERGE_ALLOWED_HOSTS=['*']
+      - CONCIERGE_SECRET_KEY=qWxPWjEKHdJJxJyho8
+      - SEND_SUSPICIOUS_BEHAVIOR_WARNINGS=True
