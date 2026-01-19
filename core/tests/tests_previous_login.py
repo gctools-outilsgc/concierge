@@ -26,7 +26,7 @@ class PreviousLoginTestCase(TestCase):
         request = self.factory.get("/")
         request.user = self.user
 
-        middleware = SessionMiddleware()
+        middleware = SessionMiddleware(lambda request : HttpResponse())
         middleware.process_request(request)
 
         # www.ziggo.nl an existing ip address
