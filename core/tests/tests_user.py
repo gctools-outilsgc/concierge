@@ -59,7 +59,7 @@ class UserTestCase(TestCase):
         request = self.factory.get("/")
         request.user = self.user
 
-        middleware = SessionMiddleware()
+        middleware = SessionMiddleware(lambda request : HttpResponse())
         middleware.process_request(request)
 
         activation_token = signing.dumps(obj=self.user.email)
