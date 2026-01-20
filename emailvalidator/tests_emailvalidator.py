@@ -3,6 +3,7 @@ Registration form validation tests using emailvalidator app
 """
 from django.test import TransactionTestCase
 from constance.test import override_config
+from unittest import mock
 
 from .validator import is_email_valid
 

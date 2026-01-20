@@ -2,6 +2,7 @@ from django.contrib.sessions.middleware import SessionMiddleware
 from django.test import TestCase
 from django.core import mail
 from django.test.client import RequestFactory
+from django.http import HttpResponse
 from core.models import User, PreviousLogin
 
 

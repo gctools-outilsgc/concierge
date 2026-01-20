@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib import auth
 from django.core import signing
 from django.test.client import RequestFactory
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from unittest import mock
 
 from core.models import User
