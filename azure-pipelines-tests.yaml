@@ -1,5 +1,7 @@
 Trigger:
-- *
+  branches:
+    include:
+      - *
 
 pr:
 - master
