@@ -16,4 +16,4 @@ steps:
   inputs:
     dockerComposeFile: 'docker-compose.test.yaml'
     projectName: 'concierge_tests'
-    dockerComposeCommand: 'docker compose -f docker-compose.test.yaml up --build'
+    dockerComposeCommand: 'up --build'
