@@ -1,0 +1,15 @@
+Trigger:
+- *
+
+pr:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+steps:
+- task: DockerCompose@1
+  displayName: Run unit tests
+  inputs:
+    dockerComposeFile: 'docker-compose.test.yaml'
