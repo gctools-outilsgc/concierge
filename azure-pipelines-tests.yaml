@@ -1,4 +1,4 @@
-Trigger:
+trigger:
   branches:
     include:
       - *
