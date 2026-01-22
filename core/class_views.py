@@ -16,7 +16,7 @@ from django_otp.plugins.otp_static.models import StaticToken
 
 from .models import PleioPartnerSite, User
 from .forms import PleioAuthenticationTokenForm, LabelledLoginForm
-from axes.attempts import get_cache_key, get_axes_cache
+from axes.helpers import get_client_cache_keys, get_cache
 from pleio_account import settings
 
 from django.contrib.auth import get_user_model
@@ -26,7 +26,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.cache import never_cache
 from django.core.exceptions import ValidationError
-from django.utils.http import is_safe_url, urlsafe_base64_decode
+from django.utils.http import urlsafe_base64_decode
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
 
@@ -43,8 +43,8 @@ class PleioLoginView(LoginView):
     )
 
     def get_context_data(self, **kwargs):
-        cache_hash_key = get_cache_key(self.request)
-        attempt = get_axes_cache().get(cache_hash_key)
+        cache_hash_key = get_client_cache_keys(self.request)[0]
+        attempt = get_cache().get(cache_hash_key)
         if not attempt:
             attempt = 0
         username = self.request.POST.get('auth-username', None)
@@ -235,7 +235,7 @@ class i18nPasswordResetConfirmView(PasswordContextMixin, FormView):
                     return HttpResponseRedirect(redirect_url)
 
         # Display the "Password reset unsuccessful" page.
-        return self.render_to_response(self.get_context_data())
+        return self.render(context=self.get_context_data())
 
     def get_user(self, uidb64):
         try:

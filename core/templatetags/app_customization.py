@@ -1,7 +1,7 @@
 from django import template
 from django.conf import settings
 from constance import config
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 register = template.Library()
 
@@ -20,6 +20,6 @@ def show_customizations_bg_image():
 @register.filter(name='translate')
 def translate(text):
     try:
-        return ugettext(text)
+        return gettext(text)
     except:
         return text

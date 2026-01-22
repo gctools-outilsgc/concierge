@@ -2,6 +2,7 @@ from django.contrib.sessions.middleware import SessionMiddleware
 from django.test import TestCase
 from django.core import mail
 from django.test.client import RequestFactory
+from django.http import HttpResponse
 from core.models import User, PreviousLogin
 
 
@@ -26,7 +27,7 @@ class PreviousLoginTestCase(TestCase):
         request = self.factory.get("/")
         request.user = self.user
 
-        middleware = SessionMiddleware()
+        middleware = SessionMiddleware(lambda request : HttpResponse())
         middleware.process_request(request)
 
         # www.ziggo.nl an existing ip address

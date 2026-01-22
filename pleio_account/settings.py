@@ -14,7 +14,7 @@ import ast
 from collections import OrderedDict
 
 import dj_database_url
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from datetime import timedelta
 import logging
 from core.helpers import str_to_bool
@@ -208,7 +208,7 @@ TIME_ZONE = 'America/Toronto'
 
 USE_I18N = True
 
-USE_L10N = True
+#USE_L10N = True #this looks like it won't be needed and is now the default? delete line if so
 
 USE_TZ = True
 
@@ -241,7 +241,7 @@ OIDC_TOKEN_EXPIRE = 86400
 
 EMAIL_BACKEND = "core.backends.SiteConfigEmailBackend"
 
-PASSWORD_RESET_TIMEOUT_DAYS = 1
+PASSWORD_RESET_TIMEOUT = 1 * 24 * 60 * 60 # this is now in seconds
 
 LOGGING = {
     'version': 1,
@@ -431,6 +431,8 @@ DATABASES = {
         conn_max_age=600
     )
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 try:
     allowed_hosts = os.environ['CONCIERGE_ALLOWED_HOSTS']

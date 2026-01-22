@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib import auth
 from django.core import signing
 from django.test.client import RequestFactory
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from unittest import mock
 
 from core.models import User
@@ -59,7 +59,7 @@ class UserTestCase(TestCase):
         request = self.factory.get("/")
         request.user = self.user
 
-        middleware = SessionMiddleware()
+        middleware = SessionMiddleware(lambda request : HttpResponse())
         middleware.process_request(request)
 
         activation_token = signing.dumps(obj=self.user.email)

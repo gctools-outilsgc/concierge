@@ -21,7 +21,7 @@ def is_email_valid(email):
 
     domains = EmailRegExValidator.objects.all().filter(allow_all=True)
     regexes += [
-        re.compile("^.*@[\w.]*?" + r.regex + "$", re.IGNORECASE)
+        re.compile(r"^.*@[\w.]*?" + r.regex + "$", re.IGNORECASE)
         for r in domains
     ]
 
