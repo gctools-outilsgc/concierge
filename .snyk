@@ -1,0 +1,100 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - webpack-dev-server > compression > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > compression > debug
+    - webpack-dev-server > express > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > express > debug
+    - webpack-dev-server > portfinder > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > portfinder > debug
+    - webpack-dev-server > serve-index > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > serve-index > debug
+    - webpack-dev-server > sockjs-client > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > sockjs-client > debug
+    - webpack-dev-server > spdy > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > spdy > debug
+    - webpack-dev-server > express > finalhandler > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > express > finalhandler > debug
+    - webpack-dev-server > express > send > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > express > send > debug
+    - webpack-dev-server > spdy > spdy-transport > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > spdy > spdy-transport > debug
+    - webpack-dev-server > express > serve-static > send > debug:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:debug:20170905'
+        path: webpack-dev-server > express > serve-static > send > debug
+  'npm:extend:20180424':
+    - less > request > extend:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:extend:20180424'
+        path: less > request > extend
+  'npm:hoek:20180212':
+    - less > request > hawk > hoek:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:hoek:20180212'
+        path: less > request > hawk > hoek
+    - less > request > hawk > boom > hoek:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:hoek:20180212'
+        path: less > request > hawk > boom > hoek
+    - less > request > hawk > sntp > hoek:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:hoek:20180212'
+        path: less > request > hawk > sntp > hoek
+    - less > request > hawk > cryptiles > boom > hoek:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:hoek:20180212'
+        path: less > request > hawk > cryptiles > boom > hoek
+  SNYK-JS-LODASH-567746:
+    - webpack > async > lodash:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: SNYK-JS-LODASH-567746
+        path: webpack > async > lodash
+    - webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: SNYK-JS-LODASH-567746
+        path: webpack-dev-server > http-proxy-middleware > lodash
+    - webpack > watchpack > async > lodash:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: SNYK-JS-LODASH-567746
+        path: webpack > watchpack > async > lodash
+  'npm:mime:20170907':
+    - webpack-dev-server > express > send > mime:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:mime:20170907'
+        path: webpack-dev-server > express > send > mime
+    - webpack-dev-server > express > serve-static > send > mime:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:mime:20170907'
+        path: webpack-dev-server > express > serve-static > send > mime
+  'npm:stringstream:20180511':
+    - less > request > stringstream:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:stringstream:20180511'
+        path: less > request > stringstream
+  'npm:tough-cookie:20170905':
+    - less > request > tough-cookie:
+        patched: '2026-01-22T14:03:26.014Z'
+        id: 'npm:tough-cookie:20170905'
+        path: less > request > tough-cookie
