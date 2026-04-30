@@ -1,4 +1,4 @@
-Django==5.2.12
+Django==5.2.13
 django-braces==1.17.0
 django-constance[database]==4.3.4
 django-cors-headers==4.9.0
