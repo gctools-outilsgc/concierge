@@ -18,7 +18,7 @@ django-axes==8.1.0
 dj_database_url==3.0.1
 geoip2==5.2.0
 gunicorn==23.0.0
-Pillow==12.2.0
+Pillow==12.3.0
 psycopg2==2.9.11
 uWSGI==2.0.31
 pika
