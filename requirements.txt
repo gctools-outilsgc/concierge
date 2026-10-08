@@ -26,4 +26,4 @@ django-redis==6.0.0
 django-ipware==7.0.1
 
 # Support for legacy style packages
-setuptools==80.9.0
+setuptools==83.0.0
