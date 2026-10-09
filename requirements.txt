@@ -27,3 +27,6 @@ django-ipware==7.0.1
 
 # Support for legacy style packages
 setuptools==80.9.0
+jwcrypto>=1.5.6 # not directly required, pinned by Snyk to avoid a vulnerability
+sqlparse>=0.5.4 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
