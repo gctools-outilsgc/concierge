@@ -756,7 +756,7 @@ msgstr "Recevoir des e-mails de connexion suspects"
 #: core/templates/register_activate.html:6
 #: core/templates/register_activate.html:10
 msgid "Activation error"
-msgstr ""
+msgstr "Erreur d’activation"
 
 #: core/templates/register_activate.html:14
 msgid "We could not activate your account"
@@ -765,6 +765,22 @@ msgstr "Nous n’avons pas pu activer votre compte"
 #: core/templates/register_activate.html:15
 msgid "Your account may already be activated."
 msgstr "Votre compte est possiblement déjà activé"
+
+#: core/templates/register_activate.html:16
+msgid "Please sign in to continue."
+msgstr "Veuillez vous connecter pour continuer."
+
+#: core/templates/register_activate.html:17
+msgid "Go to the sign in page"
+msgstr "Accéder à la page de connexion"
+
+#: core/templates/register_activate.html:20
+msgid "If you are unable to sign in,"
+msgstr "Si vous ne parvenez pas à vous connecter,"
+
+#: core/templates/register_activate.html:20
+msgid "contact support"
+msgstr "contactez le service d’assistance."
 
 #: core/templates/register_complete.html:6
 #: core/templates/register_complete.html:10
