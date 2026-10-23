@@ -27,3 +27,4 @@ django-ipware==7.0.1
 
 # Support for legacy style packages
 setuptools==80.9.0
+pyjwt>=2.14.0 # not directly required, pinned by Snyk to avoid a vulnerability
