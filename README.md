@@ -2,6 +2,12 @@
 
 This is the Pleio microservice used for handling user registration, login and SAML2 SSO. It is based on [Django project](https://www.djangoproject.com/) and handles login througout the Pleio ecosystem using OAuth2.
 
+## How to Contribute
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+**Do not post any security issues on github!** Security vulnerabilities must be reported by creating a ticket with the Digital Collaboration Division [help desk](https://gccollab.ca/help/knowledgebase).
+
 ## Setup development (through Docker)
 For windows: make sure you configure git to not do CRLF before you pull (git config --global core.autocrlf false)
 
