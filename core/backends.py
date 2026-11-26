@@ -10,8 +10,6 @@ from axes.helpers import get_credentials, get_lockout_message
 from axes.backends import AxesStandaloneBackend
 from axes.exceptions import AxesBackendPermissionDenied, AxesBackendRequestParameterRequired
 
-from .service_mesh import service_mesh_message
-
 # Combine AxesModelBackend and ElggBackend into one backend
 class ElggLockout(AxesStandaloneBackend):
 
@@ -58,12 +56,6 @@ class ElggLockout(AxesStandaloneBackend):
                         user.is_active = True
                         user.is_admin = admin
                         user.save()
-                        service_mesh_message('user.new', json.dumps({
-                            'name': user.name,
-                            'email': user.email,
-                            'gcID': user.id,
-                            'isAdmin': user.is_admin
-                        }))
                         break
 
         credentials = get_credentials(username=username, password=password, **kwargs)
