@@ -256,9 +256,6 @@ class UserAdmin(UserAdmin):
         }),
     )
 
-    def save_model(self,request, obj, form, change):
-        obj.save()
-
 
 class PreviousLogin(models.Model):
     user = models.ForeignKey(
