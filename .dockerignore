@@ -5,3 +5,4 @@ Dockerfile
 docker-compose*
 kubernetes
 .git
+postgres-data
